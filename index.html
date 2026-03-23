@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Universum</title>
+  <style>
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      overflow-x: hidden;
+      background: radial-gradient(ellipse at center, #0a0a0f 0%, #000000 100%);
+      font-family: Arial, sans-serif;
+      color: white;
+    }
+
+    /* NAVBAR */
+    .navbar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 20px;
+      z-index: 10;
+      background: rgba(0,0,0,0.3);
+      backdrop-filter: blur(10px);
+    }
+
+    .logo {
+      font-weight: bold;
+      letter-spacing: 2px;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 25px;
+    }
+
+    .nav-links a {
+      color: white;
+      text-decoration: none;
+      position: relative;
+    }
+
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      width: 0%;
+      height: 1px;
+      bottom: -3px;
+      left: 0;
+      background: white;
+      transition: 0.3s;
+    }
+
+    .nav-links a:hover::after {
+      width: 100%;
+    }
+
+    /* BURGER */
+    .burger {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+      gap: 5px;
+      z-index: 11;
+    }
+
+    .burger div {
+      width: 25px;
+      height: 2px;
+      background: white;
+    }
+
+    /* MOBILE MENU */
+    .mobile-menu {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.95);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 30px;
+      transform: translateY(-100%);
+      transition: 0.4s;
+      z-index: 9;
+    }
+
+    .mobile-menu.active {
+      transform: translateY(0);
+    }
+
+    .mobile-menu a {
+      color: white;
+      text-decoration: none;
+      font-size: 24px;
+    }
+
+    /* BACKGROUND */
+    .fancy-background {
+      height: 100vh;
+      width: 100%;
+      overflow: hidden;
+      position: relative;
+    }
+
+    /* NEBULA */
+    .nebula {
+      position: absolute;
+      width: 200%;
+      height: 200%;
+      top: -50%;
+      left: -50%;
+      background: radial-gradient(circle at 30% 40%, rgba(180, 80, 255, 0.15), transparent 40%),
+                  radial-gradient(circle at 70% 60%, rgba(255, 100, 200, 0.12), transparent 50%),
+                  radial-gradient(circle at 50% 50%, rgba(120, 50, 200, 0.1), transparent 60%);
+      filter: blur(80px);
+      animation: drift 60s linear infinite;
+    }
+
+    @keyframes drift {
+      0% { transform: translate(0, 0) scale(1); }
+      50% { transform: translate(-5%, -5%) scale(1.1); }
+      100% { transform: translate(0, 0) scale(1); }
+    }
+
+    /* STARS */
+    .stars {
+      width: 100vw;
+      height: 100vh;
+      position: relative;
+    }
+
+    .star {
+      position: absolute;
+      background: white;
+      border-radius: 50%;
+      animation: twinkle 2s infinite ease-in-out;
+    }
+
+    @keyframes twinkle {
+      0%, 100% { opacity: 0.2; }
+      50% { opacity: 1; }
+    }
+
+    /* CONTENT (GLASS BOX) */
+    .content-wrapper {
+      position: absolute;
+      top: 80px;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      padding: 20px;
+      z-index: 5;
+    }
+
+    .content-box {
+      width: 100%;
+      max-width: 900px;
+      padding: 30px;
+      border-radius: 20px;
+      background: rgba(255,255,255,0.05);
+      backdrop-filter: blur(20px);
+      border: 1px solid rgba(255,255,255,0.1);
+      box-shadow: 0 0 40px rgba(180, 80, 255, 0.15);
+    }
+	
+	.burger {
+	  display: none;
+	}
+
+    /* RESPONSIVE */
+    @media (max-width: 768px) {
+      .nav-links {
+        display: none !important;
+      }
+
+      .burger {
+        display: flex !important;
+		display: visible;
+      }
+
+      .content-box {
+        padding: 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="navbar">
+    <div class="logo">Anything in Between</div>
+
+    <div class="nav-links">
+      <a href="./index.html">Home</a>
+      <a href="./News.html">News</a>
+      <a href="./AboutUs.html">Über uns</a>
+      <a href="./Contact.html">Kontakt</a>
+    </div>
+
+    <div class="burger" onclick="toggleMenu()">
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+  </div>
+
+  <div class="mobile-menu" id="mobileMenu">
+      <a href="./index.html">Home</a>
+      <a href="./News.html">News</a>
+      <a href="./AboutUs.html">Über uns</a>
+      <a href="./Contact.html">Kontakt</a>
+  </div>
+
+  <div class="fancy-background">
+    <div class="nebula"></div>
+    <div class="stars" id="stars"></div>
+  </div>
+
+  <!-- CONTENT -->
+  <div class="content-wrapper">
+    <div class="content-box" style=" height: 500px; background: url(anything-in-between.png); background-size: cover;background-repeat: no-repeat; background-position: center;">
+      <img source="" />
+    </div>
+  </div>
+
+  <script>
+    function toggleMenu() {
+      document.getElementById('mobileMenu').classList.toggle('active');
+    }
+
+    const starContainer = document.getElementById('stars');
+    const numberOfStars = 400;
+
+    for (let i = 0; i < numberOfStars; i++) {
+      const star = document.createElement('div');
+      star.classList.add('star');
+
+      const size = Math.random() * 2;
+      star.style.width = size + 'px';
+      star.style.height = size + 'px';
+
+      star.style.top = Math.random() * 100 + 'vh';
+      star.style.left = Math.random() * 100 + 'vw';
+
+      star.style.animationDuration = (Math.random() * 3 + 1) + 's';
+
+      starContainer.appendChild(star);
+    }
+  </script>
+</body>
+</html>

@@ -1,198 +1,11 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Universum</title>
-  <style>
-    * { box-sizing: border-box; }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anything in Between</title>
 
-    body {
-      margin: 0;
-      overflow-x: hidden;
-      background: radial-gradient(ellipse at center, #0a0a0f 0%, #000000 100%);
-      font-family: Arial, sans-serif;
-      color: white;
-    }
-
-    /* NAVBAR */
-    .navbar {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 15px 20px;
-      z-index: 10;
-      background: rgba(0,0,0,0.3);
-      backdrop-filter: blur(10px);
-    }
-
-    .logo {
-      font-weight: bold;
-      letter-spacing: 2px;
-    }
-
-    .nav-links {
-      display: flex;
-      gap: 25px;
-    }
-
-    .nav-links a {
-      color: white;
-      text-decoration: none;
-      position: relative;
-    }
-
-    .nav-links a::after {
-      content: '';
-      position: absolute;
-      width: 0%;
-      height: 1px;
-      bottom: -3px;
-      left: 0;
-      background: white;
-      transition: 0.3s;
-    }
-
-    .nav-links a:hover::after {
-      width: 100%;
-    }
-
-    /* BURGER */
-    .burger {
-      display: none;
-      flex-direction: column;
-      cursor: pointer;
-      gap: 5px;
-      z-index: 11;
-    }
-
-    .burger div {
-      width: 25px;
-      height: 2px;
-      background: white;
-    }
-
-    /* MOBILE MENU */
-    .mobile-menu {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(0,0,0,0.95);
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      gap: 30px;
-      transform: translateY(-100%);
-      transition: 0.4s;
-      z-index: 9;
-    }
-
-    .mobile-menu.active {
-      transform: translateY(0);
-    }
-
-    .mobile-menu a {
-      color: white;
-      text-decoration: none;
-      font-size: 24px;
-    }
-
-    /* BACKGROUND */
-    .fancy-background {
-      height: 100vh;
-      width: 100%;
-      overflow: hidden;
-      position: relative;
-    }
-
-    /* NEBULA */
-    .nebula {
-      position: absolute;
-      width: 200%;
-      height: 200%;
-      top: -50%;
-      left: -50%;
-      background: radial-gradient(circle at 30% 40%, rgba(180, 80, 255, 0.15), transparent 40%),
-                  radial-gradient(circle at 70% 60%, rgba(255, 100, 200, 0.12), transparent 50%),
-                  radial-gradient(circle at 50% 50%, rgba(120, 50, 200, 0.1), transparent 60%);
-      filter: blur(80px);
-      animation: drift 60s linear infinite;
-    }
-
-    @keyframes drift {
-      0% { transform: translate(0, 0) scale(1); }
-      50% { transform: translate(-5%, -5%) scale(1.1); }
-      100% { transform: translate(0, 0) scale(1); }
-    }
-
-    /* STARS */
-    .stars {
-      width: 100vw;
-      height: 100vh;
-      position: relative;
-    }
-
-    .star {
-      position: absolute;
-      background: white;
-      border-radius: 50%;
-      animation: twinkle 2s infinite ease-in-out;
-    }
-
-    @keyframes twinkle {
-      0%, 100% { opacity: 0.2; }
-      50% { opacity: 1; }
-    }
-
-    /* CONTENT (GLASS BOX) */
-    .content-wrapper {
-      position: absolute;
-      top: 80px;
-      width: 100%;
-      display: flex;
-      justify-content: center;
-      padding: 20px;
-      z-index: 5;
-    }
-
-    .content-box {
-      width: 100%;
-      max-width: 900px;
-      padding: 30px;
-      border-radius: 20px;
-      background: rgba(255,255,255,0.05);
-      backdrop-filter: blur(20px);
-      border: 1px solid rgba(255,255,255,0.1);
-      box-shadow: 0 0 40px rgba(180, 80, 255, 0.15);
-    }
-	
-	.burger {
-	  display: none;
-	}
-
-    /* RESPONSIVE */
-    @media (max-width: 768px) {
-      .nav-links {
-        display: none !important;
-      }
-
-      .burger {
-        display: flex !important;
-		display: visible;
-      }
-
-      .content-box {
-        padding: 20px;
-      }
-    }
-  </style>
+    <link rel="stylesheet" href="styles.scss">
 </head>
 <body>
 
@@ -229,7 +42,22 @@
   <div class="content-wrapper">
     <div class="content-box">
       <h1>Über uns</h1>
-      <p>Hier werden wir uns bald als Band vorstellen ✨</p>
+      <p>
+          Moin Moin! 🤘🏻<br />
+          <br />
+          Wir sind zwei Musiker aus Hamburg, beide 34 Jahre alt, die gerade dabei sind, ein neues Projekt im Bereich Deathcore / Metalcore / Melodic Death Metal auf die Beine zu stellen. Gerne auch mit elektronischen Einflüssen ⚡<br />
+          <br />
+          Unser Ziel ist es, einen modernen, energiegeladenen Sound zu entwickeln, der Härte 💀, Atmosphäre 💫 und Dynamik 🌩️ verbindet.<br />
+          Inspiration ziehen wir unter anderem aus Bands wie Lorna Shore und Enter Shikari 🎧 – also aus einer Mischung aus brachialem Metal, melodischen Elementen und experimentellen Sounds.<br />
+          <br />
+          Am Bass (Simon) 🎸 steht ein Musiker mit etwas Band- und Live-Erfahrung. Er ist in einer Rock-Coverband aktiv und hat bereits kleinere Gigs gespielt 🎤<br />
+          Am Mikro (Nils) 🎙️ steht ein motivierter Neueinsteiger, der sich aktuell stark auf Growls und False Chord Vocals fokussiert und darauf brennt, erste Bühnenerfahrung zu sammeln 🔥<br />
+          <br />
+          Uns verbindet vor allem die Motivation, etwas Eigenes aufzubauen 🛠️, Songs zu schreiben ✍️ und gemeinsam musikalisch zu wachsen 🌱<br />
+          Langfristig möchten wir eine Band formen, die nicht nur im Proberaum funktioniert, sondern auch live überzeugt 🎪<br />
+          <br />
+          Aktuell sind wir auf der Suche nach weiteren motivierten Musikern, die Lust auf moderne Metal-Sounds, kreative Zusammenarbeit und ein ernsthaftes Bandprojekt haben 🤘
+      </p>
     </div>
   </div>
 

@@ -108,6 +108,16 @@ a:hover, a:visited, a:link, a:active {
     background: white;
 }
 
+.content-logo {
+    height: 500px;
+    /* height: 100%; */
+    /* height: 1024px; */
+    background: url(./Anything-in-Between.png) !important;
+    background-size: cover !important;
+    background-repeat: no-repeat !important;
+    background-position: center !important;
+}
+
 /* MOBILE MENU */
 .mobile-menu {
     position: fixed;
@@ -220,6 +230,7 @@ a:hover, a:visited, a:link, a:active {
     display: none;
 }
 
+
 /* RESPONSIVE */
 @media (max-width: 768px) {
     .nav-links {
@@ -233,5 +244,13 @@ a:hover, a:visited, a:link, a:active {
 
     .content-box {
         padding: 20px;
+    }
+
+    .content-logo {
+        background: url(./Anything-in-Between-mobile.png) !important;
+        
+    background-size: cover !important;
+    background-repeat: no-repeat !important;
+    background-position: center !important;
     }
 }
